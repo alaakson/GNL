@@ -88,3 +88,19 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *) &s[i]);
 	return (NULL);
 }
+
+
+// memset is only used on the first approach
+void	*ft_memset(void *b, int c, size_t len)
+{
+	unsigned char	*tmp;
+
+	tmp = (unsigned char *) b;
+	while (0 < len)
+	{
+		*(tmp) = (unsigned char) c;
+		tmp++;
+		len--;
+	}
+	return (b);
+}
