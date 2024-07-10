@@ -153,9 +153,7 @@ static char	*length_of_fd(int fd, char *buf, char *storage)
 	{
 		read_lines = read(fd, buf, BUFFER_SIZE);
 		if (read_lines == -1)
-		{
 			return (NULL);
-		}
 		else if (read_lines == 0)
 			break ;
 		buf[read_lines] = '\0';
@@ -165,7 +163,10 @@ static char	*length_of_fd(int fd, char *buf, char *storage)
 		storage = ft_strjoin(temp, buf);
 		freedom (&temp);
 		if (!storage)
+		{
+			freedom (&content);
 			return (NULL);
+		}
 		if (ft_strchr(buf, '\n'))
 			break ;
 	}
@@ -178,7 +179,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	char		*buffer;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		freedom (&content);
 		return (NULL);
