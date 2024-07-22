@@ -18,7 +18,6 @@
 # endif
 
 # include <unistd.h>
-# include <fcntl.h>
 # include <stdlib.h>
 # include <stdint.h>
 
