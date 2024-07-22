@@ -112,17 +112,8 @@ char	*get_next_line(int fd)
 //
 //Second approach for get_next_line
 //
-include "get_next_line.h"
 
-static void	*freedom(char **ptr)
-{
-	if (ptr && *ptr)
-	{
-		free(*ptr);
-		*ptr = NULL;
-	}
-	return (ptr);
-}
+#include "get_next_line.h"
 
 static char	*line_extract(char *line)
 {
@@ -163,10 +154,7 @@ static char	*length_of_fd(int fd, char *buf, char *storage)
 		storage = ft_strjoin(temp, buf);
 		freedom (&temp);
 		if (!storage)
-		{
-			freedom (&content);
 			return (NULL);
-		}
 		if (ft_strchr(buf, '\n'))
 			break ;
 	}
