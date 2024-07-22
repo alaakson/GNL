@@ -28,5 +28,6 @@ char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *b, int c, size_t len); // used only on first approach
+void	*freedom(char **ptr); // used in second approach as the freedom was moved to utils
 
 #endif 
